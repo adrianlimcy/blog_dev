@@ -13,5 +13,6 @@ Steps:
 7. mix test
   - make sure there is a postgres superuser account in the postgres installation
   - homebrew might now have it as default
+8. mix phx.gen.live Stories Story stories title:string body:text user_id:references:users
 
 
