@@ -16,5 +16,11 @@ Steps:
 8. mix phx.gen.live Stories Story stories title:string body:text user_id:references:users
 9. copy the routes from the terminal into the authentication routes in router.ex
 10. add "setup :register_and_log_in_user" in story_live_test.exs
+Adding user_id into the DB story entries
+11. add the user_id into the live component in index.html.heex
+  - user_id = {@current_user.id}
+12. add user_id in the story.ex changeset for ecto
+13. map user_id into the story_params
+
 
 

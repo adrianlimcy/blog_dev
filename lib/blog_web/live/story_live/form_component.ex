@@ -20,7 +20,7 @@ defmodule BlogWeb.StoryLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:title]} type="text" label="Title" />
-        <.input field={@form[:body]} type="text" label="Body" />
+        <.input field={@form[:body]} type="textarea" label="Body" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Story</.button>
         </:actions>
@@ -50,6 +50,7 @@ defmodule BlogWeb.StoryLive.FormComponent do
   end
 
   def handle_event("save", %{"story" => story_params}, socket) do
+    story_params = Map.put(story_params, "user_id", socket.assigns[:user_id])
     save_story(socket, socket.assigns.action, story_params)
   end
 
