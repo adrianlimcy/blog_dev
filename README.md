@@ -14,5 +14,7 @@ Steps:
   - make sure there is a postgres superuser account in the postgres installation
   - homebrew might now have it as default
 8. mix phx.gen.live Stories Story stories title:string body:text user_id:references:users
+9. copy the routes from the terminal into the authentication routes in router.ex
+10. add "setup :register_and_log_in_user" in story_live_test.exs
 
 

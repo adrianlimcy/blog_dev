@@ -8,6 +8,8 @@ defmodule BlogWeb.StoryLiveTest do
   @update_attrs %{title: "some updated title", body: "some updated body"}
   @invalid_attrs %{title: nil, body: nil}
 
+  setup :register_and_log_in_user
+
   defp create_story(_) do
     story = story_fixture()
     %{story: story}
