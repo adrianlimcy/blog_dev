@@ -21,6 +21,10 @@ Adding user_id into the DB story entries
   - user_id = {@current_user.id}
 12. add user_id in the story.ex changeset for ecto
 13. map user_id into the story_params
-
+14. Enforce Authencation
+  - created new def with added variables in list_stories within story.ex in blog
+  - created new getstory! within story.ex in blog
+  - added a variable when mounting in story_live/index.ex
+  - added a variable when editing and deleting in story_live/index.ex
 
 
