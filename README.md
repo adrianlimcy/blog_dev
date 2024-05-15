@@ -26,5 +26,20 @@ Adding user_id into the DB story entries
   - created new getstory! within story.ex in blog
   - added a variable when mounting in story_live/index.ex
   - added a variable when editing and deleting in story_live/index.ex
+15. Copy the index.ex and index.html.heex from story_live folder to paste inside story_live folder
+16. Change the copied index.ex and index.html.heex to home.ex and home.html.heex
+17. Change the home route in router.ex to a live end point - StoryLive.home
+18. Modify home.ex to get all stories without parameters
+19. Modify home.ex to :home instead of :index
+20. Modify home.html.heex to remove unnecessary buttons
+21. Disable show/edit in router.ex
+22. Clean up show.html.heex in story_live to disable editing modal
+23. Add navigation to root.html.heeex in layouts
+24. Move the show endpoint to the public route in router.ex
+  - Ensure that this line is after the authencated new story line so that there is no error
+25. 
 
+
+user and user passwords
+test@test.com - testtesttest
 

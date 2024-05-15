@@ -20,7 +20,8 @@ defmodule BlogWeb.Router do
   scope "/", BlogWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
+    live "/", StoryLive.Home, :home
 
   end
 
@@ -74,9 +75,14 @@ defmodule BlogWeb.Router do
       live "/stories/new", StoryLive.Index, :new
       live "/stories/:id/edit", StoryLive.Index, :edit
 
-      live "/stories/:id", StoryLive.Show, :show
-      live "/stories/:id/show/edit", StoryLive.Show, :edit
+      # live "/stories/:id", StoryLive.Show, :show
+      # live "/stories/:id/show/edit", StoryLive.Show, :edit
     end
+  end
+
+  scope "/", BlogWeb do
+    pipe_through :browser
+    live "/stories/:id", StoryLive.Show, :show
   end
 
   scope "/", BlogWeb do
