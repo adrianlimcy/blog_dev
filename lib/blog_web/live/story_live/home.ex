@@ -3,7 +3,6 @@ defmodule BlogWeb.StoryLive.Home
   use BlogWeb, :live_view
 
   alias Blog.Stories
-  alias Blog.Stories.Story
 
   @impl true
   def mount(_params, _session, socket) do

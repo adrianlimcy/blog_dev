@@ -37,7 +37,11 @@ Adding user_id into the DB story entries
 23. Add navigation to root.html.heeex in layouts
 24. Move the show endpoint to the public route in router.ex
   - Ensure that this line is after the authencated new story line so that there is no error
-25. 
+25. add the field name in blog>accounts>user.ex
+26. mix ecto.gen.migration add_name
+27. alter (not create) the user table and add the field name in the migration file
+28. update blog>accounts>user.ex in the registration_changeset to include the name parameter
+29. Go to blog_web>live>user_registration_live to include name field
 
 
 user and user passwords
