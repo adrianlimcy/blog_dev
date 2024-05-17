@@ -50,6 +50,9 @@ Adding user_id into the DB story entries
   - mix ecto.create
   - mix ecto.migrate
 34. Add preload into stories.ex so that we can see the name when we get(read) a story
+35. mix phx.gen.live Comments Comment comments message:text story_id:references:stories
+36. mix ecto.migrate
+
 
 user and user passwords
 test@test.com - testtesttest
