@@ -52,7 +52,8 @@ Adding user_id into the DB story entries
 34. Add preload into stories.ex so that we can see the name when we get(read) a story
 35. mix phx.gen.live Comments Comment comments message:text story_id:references:stories
 36. mix ecto.migrate
-
+37. OPTIONAL: create the test.ex and test.html.heex to demo heex in heex in comment_live
+38. Add test.html.heex into show.html.heex in story_live by using the correct html tag
 
 user and user passwords
 test@test.com - testtesttest
