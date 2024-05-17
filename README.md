@@ -42,7 +42,14 @@ Adding user_id into the DB story entries
 27. alter (not create) the user table and add the field name in the migration file
 28. update blog>accounts>user.ex in the registration_changeset to include the name parameter
 29. Go to blog_web>live>user_registration_live to include name field
-
+30. Associate user table to stories table by modifying blog>stories>story.ex by changing field to belongs_to
+31. Modify blog_web>live>home.html.heex to display user name
+32. Add preload into stories.ex so that users are loaded when listing stories
+33. OPTIONAL: clean up database
+  - mix ecto.drop
+  - mix ecto.create
+  - mix ecto.migrate
+34. Add preload into stories.ex so that we can see the name when we get(read) a story
 
 user and user passwords
 test@test.com - testtesttest
