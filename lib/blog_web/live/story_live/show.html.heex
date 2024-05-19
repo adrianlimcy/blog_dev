@@ -9,7 +9,18 @@
   <:item title="Name"><%= @story.user.name %></:item>
 </.list>
 
-<BlogWeb.CommentLive.Test.render />
+<%!-- <BlogWeb.CommentLive.Test.render /> --%>
+<div class="mt-20">
+<.live_component
+    module={BlogWeb.CommentLive.FormComponent}
+    id={:new}
+    title={@page_title}
+    action={:new}
+    comment={@comment}
+    story_id={@story.id}
+    patch={~p"/stories/#{@story.id}"}
+  />
+</div>
 
 <.back navigate={~p"/"}>Back to Home</.back>
 

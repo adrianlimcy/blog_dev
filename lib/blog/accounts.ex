@@ -22,6 +22,10 @@ defmodule Blog.Accounts do
       nil
 
   """
+  def list_accounts do
+    Repo.all(User)
+  end
+
   def get_user_by_email(email) when is_binary(email) do
     Repo.get_by(User, email: email)
   end

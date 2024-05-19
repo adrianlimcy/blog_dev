@@ -54,6 +54,20 @@ Adding user_id into the DB story entries
 36. mix ecto.migrate
 37. OPTIONAL: create the test.ex and test.html.heex to demo heex in heex in comment_live
 38. Add test.html.heex into show.html.heex in story_live by using the correct html tag
+39. steal the form component from comment index and put into story_live show.ex
+40. mount comment in show.ex using a comment struct
+41. edit the comment form in show.ex to allow only new comments
+  - i.e. no need for edit
+42. assosciate comment to stories
+  - add story.id into the form component in show.ex
+  - add the field for story.id in the comment form_component
+    - make sure the value is written (@story_id)
+  - change the story_id field and changeset in comment.ex
+  - add has_many to stories so that there is a resolution for the deletion of stories for comments
+43. Optional: Creating an index page for users
+  - create the def list_accounts using Repo all in accounts.ex
+  - create the folder account_live folder in blog_web/live
+  - create the index.ex and the index.html.heex
 
 user and user passwords
 test@test.com - testtesttest

@@ -75,6 +75,8 @@ defmodule BlogWeb.Router do
       live "/stories/new", StoryLive.Index, :new
       live "/stories/:id/edit", StoryLive.Index, :edit
 
+      live "/accounts", AccountLive.Index, :index
+
       # live "/stories/:id", StoryLive.Show, :show
       # live "/stories/:id/show/edit", StoryLive.Show, :edit
 
