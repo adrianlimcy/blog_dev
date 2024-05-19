@@ -39,7 +39,7 @@ defmodule Blog.Stories do
       ** (Ecto.NoResultsError)
 
   """
-  def get_story!(id), do: Repo.get!(Story, id) |> Repo.preload(:user)
+  def get_story!(id), do: Repo.get!(Story, id) |> Repo.preload([:user, :comments]) |> Repo.preload(comments: :user)
 
   def get_story!(id, user_id) do
     Repo.one(from s in Story, where: s.id == ^id and s.user_id == ^user_id)

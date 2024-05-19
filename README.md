@@ -68,6 +68,18 @@ Adding user_id into the DB story entries
   - create the def list_accounts using Repo all in accounts.ex
   - create the folder account_live folder in blog_web/live
   - create the index.ex and the index.html.heex
+44. enhance show.ex in stories to show comments
+45. add list of comments
+46. preload the comments in stories in stories.ex
+47. associate comments to users
+  - add belongs_to :user in comment.ex
+  - mix ecto.gen.migration comment_has_user
+  - mix ecto.migrate
+48. Only users can comment, so add the if statement in show.html.heex
+49. Preload users who made the comments in stories
+48. Allow anonymous comments by using conditional statements when mounting
+49. Ensure that the variables are passed between show.ex and show.html.heex
+
 
 user and user passwords
 test@test.com - testtesttest

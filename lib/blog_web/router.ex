@@ -89,10 +89,10 @@ defmodule BlogWeb.Router do
     end
   end
 
-  scope "/", BlogWeb do
-    pipe_through :browser
-    live "/stories/:id", StoryLive.Show, :show
-  end
+  # scope "/", BlogWeb do
+  #   pipe_through :browser
+  #   live "/stories/:id", StoryLive.Show, :show
+  # end
 
   scope "/", BlogWeb do
     pipe_through [:browser]
@@ -101,6 +101,7 @@ defmodule BlogWeb.Router do
 
     live_session :current_user,
       on_mount: [{BlogWeb.UserAuth, :mount_current_user}] do
+      live "/stories/:id", StoryLive.Show, :show
       live "/users/confirm/:token", UserConfirmationLive, :edit
       live "/users/confirm", UserConfirmationInstructionsLive, :new
     end

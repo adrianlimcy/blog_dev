@@ -10,6 +10,7 @@
 </.list>
 
 <%!-- <BlogWeb.CommentLive.Test.render /> --%>
+<%!-- <%= if @current_user do %> --%>
 <div class="mt-20">
 <.live_component
     module={BlogWeb.CommentLive.FormComponent}
@@ -18,9 +19,14 @@
     action={:new}
     comment={@comment}
     story_id={@story.id}
+    current_user_id={@current_user_id} 
     patch={~p"/stories/#{@story.id}"}
   />
 </div>
+<%!-- <% end %> --%>
+<.list>
+  <:item :for={comment <- @story.comments} title={"Comment by #{if comment.user do comment.user.name else "Anon" end}"}><%= comment.message %></:item>
+</.list>
 
 <.back navigate={~p"/"}>Back to Home</.back>
 
