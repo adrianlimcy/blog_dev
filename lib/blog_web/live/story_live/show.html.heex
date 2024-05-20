@@ -1,32 +1,33 @@
-<.header>
-  Story <%= @story.id %>
-  <:subtitle>This is a story record from a user from the website.</:subtitle>
-</.header>
+<div class="bg-white py-32 px-6 lg:px-8">
 
-<.list>
-  <:item title="Title"><%= @story.title %></:item>
-  <:item title="Body"><%= @story.body %></:item>
-  <:item title="Name"><%= @story.user.name %></:item>
-</.list>
+  <div class="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+    <.back navigate={~p"/"}>Back to stories</.back>
+    <p class="mt-10 text-base font-semibold leading-7 text-indigo-600"><%= @story.user.name %></p>
+    <h1 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"><%= @story.title %></h1>
+    <p class="mt-6 text-xl leading-8"><%= @story.body %></p>
+    
+    <div class="mt-20">
+    <%= if @current_user_id do %>
+    <.live_component
+      module={BlogWeb.CommentLive.FormComponent}
+      id={:new}
+      title={@page_title}
+      action={:new}
+      comment={@comment}
+      story_id={@story.id}
+      current_user_id={@current_user_id}
+      patch={~p"/stories/#{@story.id}"}
+    />
+    <% end %>
+    </div>
 
-<%!-- <BlogWeb.CommentLive.Test.render /> --%>
-<%!-- <%= if @current_user do %> --%>
-<div class="mt-20">
-<.live_component
-    module={BlogWeb.CommentLive.FormComponent}
-    id={:new}
-    title={@page_title}
-    action={:new}
-    comment={@comment}
-    story_id={@story.id}
-    current_user_id={@current_user_id} 
-    patch={~p"/stories/#{@story.id}"}
-  />
+    <.list>
+      <:item :for={comment <- @story.comments} title={"Comment By #{if comment.user do comment.user.name else "Anon" end}"}><%= comment.message %></:item>
+    </.list>
+  </div>
+
+
+
 </div>
-<%!-- <% end %> --%>
-<.list>
-  <:item :for={comment <- @story.comments} title={"Comment by #{if comment.user do comment.user.name else "Anon" end}"}><%= comment.message %></:item>
-</.list>
 
-<.back navigate={~p"/"}>Back to Home</.back>
 
