@@ -18,7 +18,7 @@ defmodule Blog.Stories do
 
   """
   def list_stories do
-    Repo.all(Story) |> Repo.preload(:user)
+    Repo.all(Story) |> Repo.preload([:user, :comments])
   end
 
   def list_stories(user_id) do

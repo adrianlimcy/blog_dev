@@ -16,6 +16,8 @@ defmodule Blog.StoriesFixtures do
       })
       |> Blog.Stories.create_story()
 
+    story = %{ story | comments: [], user: nil}
+
     story
   end
 end

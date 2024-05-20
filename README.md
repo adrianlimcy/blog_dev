@@ -80,7 +80,7 @@ Adding user_id into the DB story entries
 48. Allow anonymous comments by using conditional statements when mounting
 49. Ensure that the variables are passed between show.ex and show.html.heex
 50. Copy and paste tailwind templates into the html.heex file
-51. Pass tests
+51. Pass tests (not really, fails story_id validation in the comment tests)
 52. End
 
 user and user passwords
